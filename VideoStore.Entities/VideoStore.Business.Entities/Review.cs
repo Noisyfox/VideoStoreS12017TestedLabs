@@ -12,10 +12,15 @@ namespace VideoStore.Business.Entities
     using System;
     using System.Collections.Generic;
     
-    public partial class LoginCredential
+    public partial class Review
     {
         public int Id { get; set; }
-        public string UserName { get; set; }
-        public string EncryptedPassword { get; set; }
+        public string Title { get; set; }
+        public System.DateTime Date { get; set; }
+        public double Rating { get; set; }
+        public string Content { get; set; }
+    
+        public virtual User Reviewer { get; set; }
+        public virtual Media Media { get; set; }
     }
 }
