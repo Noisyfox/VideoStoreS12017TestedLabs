@@ -1,0 +1,20 @@
+﻿@model VideoStore.WebClient.ViewModels.MediaDetailViewModel
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Detail</h2>
+
+
+<div>
+    <h4>MediaDetailViewModel</h4>
+    <hr/>
+    <dl class="dl-horizontal">
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {/* id = Model.PrimaryKey */}) |
+    @Html.ActionLink("Back to List", "ListMedia")
+</p>

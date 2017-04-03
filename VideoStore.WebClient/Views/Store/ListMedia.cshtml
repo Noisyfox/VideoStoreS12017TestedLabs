@@ -15,7 +15,7 @@
     {
         <tr>
             <td>
-                @item.Title |
+                @Html.ActionLink(item.Title, "MediaDetail", new{media = item.Id}) |
                 Price: $@item.Price |
                 Quantity: @item.StockCount
 

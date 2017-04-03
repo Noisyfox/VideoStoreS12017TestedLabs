@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using VideoStore.Services.MessageTypes;
 using VideoStore.WebClient.ViewModels;
 
 namespace VideoStore.WebClient.Controllers
@@ -18,6 +19,11 @@ namespace VideoStore.WebClient.Controllers
         public ActionResult ListMedia()
         {
             return View(new CatalogueViewModel());
+        }
+
+        public ActionResult MediaDetail(int media)
+        {
+            return View(new MediaDetailViewModel(media));
         }
     }
 }
