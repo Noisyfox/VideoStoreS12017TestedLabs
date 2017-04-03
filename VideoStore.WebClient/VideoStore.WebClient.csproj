@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -184,6 +185,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ClientModels\Cart.cs" />
     <Compile Include="ViewModels\CatalogueViewModel.cs" />
+    <Compile Include="ViewModels\WriteReviewViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -235,6 +237,7 @@
     <Content Include="Views\Manage\ErrorUpdatingUserDetails.cshtml" />
     <Content Include="Views\Cart\InsufficientStock.cshtml" />
     <Content Include="Views\Store\MediaDetail.cshtml" />
+    <Content Include="Views\Store\WriteReview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -39,5 +39,20 @@ namespace VideoStore.Services
                 CatalogueProvider.GetMediaById(pId));
             return external;
         }
+
+        public List<Review> GetReviews(Media media)
+        {
+            var internalReviews = CatalogueProvider.GetReviews(media.Id);
+            var externalReviews =
+                MessageTypeConverter.Instance.Convert<List<Business.Entities.Review>, List<Review>>(internalReviews);
+
+            return externalReviews;
+        }
+
+        public void CreateReview(Review review)
+        {
+            var internalReview = MessageTypeConverter.Instance.Convert<Review, Business.Entities.Review>(review);
+            CatalogueProvider.CreateReview(internalReview);
+        }
     }
 }

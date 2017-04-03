@@ -47,6 +47,8 @@ namespace VideoStore.Services
 
             AutoMapper.Mapper.CreateMap<VideoStore.Business.Entities.LoginCredential,
                 VideoStore.Services.MessageTypes.LoginCredential>();
+
+            AutoMapper.Mapper.CreateMap<Business.Entities.Review, MessageTypes.Review>();
         }
 
         public void InitializeExternalToInternalMappings()
@@ -65,6 +67,8 @@ namespace VideoStore.Services
 
             AutoMapper.Mapper.CreateMap<VideoStore.Services.MessageTypes.LoginCredential,
                 VideoStore.Business.Entities.LoginCredential>();
+
+            AutoMapper.Mapper.CreateMap<MessageTypes.Review, Business.Entities.Review>();
         }
 
         public Destination Convert<Source, Destination>(Source s)

@@ -19,9 +19,15 @@ namespace VideoStore.WebClient.ViewModels
 
         public Media Media { get; }
 
+        public List<Review> Reviews { get; }
+
+        public double AverageRating { get; }
+
         public MediaDetailViewModel(int id)
         {
             Media = CatalogueService.GetMediaById(id);
+            Reviews = CatalogueService.GetReviews(Media);
+            AverageRating = Reviews.Select(r => r.Rating).DefaultIfEmpty(0).Average();
         }
     }
 }

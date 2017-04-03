@@ -10,5 +10,7 @@ namespace VideoStore.Business.Components.Interfaces
     {
         List<Business.Entities.Media> GetMediaItems(int pOffset, int pCount);
         Media GetMediaById(int pId);
+        List<Review> GetReviews(int pId);
+        void CreateReview(Review review);
     }
 }

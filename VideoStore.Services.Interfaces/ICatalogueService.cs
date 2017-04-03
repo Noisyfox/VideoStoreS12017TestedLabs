@@ -15,5 +15,11 @@ namespace VideoStore.Services.Interfaces
 
         [OperationContract]
         Media GetMediaById(int pId);
+
+        [OperationContract]
+        List<Review> GetReviews(Media media);
+
+        [OperationContract]
+        void CreateReview(Review review);
     }
 }

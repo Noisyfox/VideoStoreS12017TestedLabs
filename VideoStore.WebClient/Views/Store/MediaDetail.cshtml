@@ -13,8 +13,10 @@
     <hr/>
     <dl class="dl-horizontal">
     </dl>
+    Average rating: @Model.AverageRating
+    <br/>
+    @Html.ActionLink("Create Review", "WriteReview", new{media = Model.Media.Id})
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {/* id = Model.PrimaryKey */}) |
     @Html.ActionLink("Back to List", "ListMedia")
 </p>
