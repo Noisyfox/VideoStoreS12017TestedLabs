@@ -16,6 +16,8 @@ namespace VideoStore.WebClient.ViewModels
         public EditUserDetailsViewModel(User pUser)
         {
             Email = pUser.Email;
+            Country = pUser.Country;
+            City = pUser.City;
             Address = pUser.Address;
         }
 
@@ -28,6 +30,15 @@ namespace VideoStore.WebClient.ViewModels
             set;
         }
 
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Country")]
+        public string Country { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "City")]
+        public string City { get; set; }
 
         [DataType(DataType.MultilineText)]
         [Display(Name = "Postal Address")]
@@ -42,6 +53,8 @@ namespace VideoStore.WebClient.ViewModels
         {
             pUser.Email = Email;
             pUser.Address = Address;
+            pUser.Country = Country;
+            pUser.City = City;
             return pUser;
         }
     }

@@ -20,6 +20,18 @@
                 @Html.ValidationMessageFor(m => m.Email)
             </dd>
             <br />
+            <dt>Country:</dt>
+            <dd>
+                @Html.TextBoxFor(m => m.Country)
+                @Html.ValidationMessageFor(m => m.Country)
+            </dd>
+            <br />
+            <dt>City:</dt>
+            <dd>
+                @Html.TextBoxFor(m => m.City)
+                @Html.ValidationMessageFor(m => m.City)
+            </dd>
+            <br />
             <dt>Address:</dt>
             <dd>
                 @Html.TextBoxFor(m => m.Address)

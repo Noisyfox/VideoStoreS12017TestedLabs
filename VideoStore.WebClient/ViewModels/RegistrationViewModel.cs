@@ -31,6 +31,16 @@ namespace VideoStore.WebClient.ViewModels
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
 
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "Country")]
+        public string Country { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
+        [Display(Name = "City")]
+        public string City { get; set; }
+
         [DataType(DataType.MultilineText)]
         [Display(Name = "Postal Address")]
         public string Address { get; set; }
@@ -45,6 +55,8 @@ namespace VideoStore.WebClient.ViewModels
                 {
                     UserName = this.UserName
                 },
+                Country = this.Country,
+                City = this.City,
                 Address = this.Address
             };
             return user;
