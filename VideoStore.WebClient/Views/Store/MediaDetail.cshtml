@@ -16,6 +16,39 @@
     Average rating: @Model.AverageRating
     <br/>
     @Html.ActionLink("Create Review", "WriteReview", new{media = Model.Media.Id})
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <ul class="list-group">
+                    @foreach (var review in Model.Reviews)
+                    {
+                        <li class="list-group-item">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-7">
+                                        @review.Title
+                                    </div>
+                                    <div class="col-lg-5">
+                                        @review.Date
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    by @review.Reviewer.Name at @review.Reviewer.City, @review.Reviewer.Country
+                                </div>
+                                <div class="row">
+                                    @review.Rating out of 5
+                                </div>
+                                <div class="row">
+                                    @review.Content
+                                </div>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Back to List", "ListMedia")
