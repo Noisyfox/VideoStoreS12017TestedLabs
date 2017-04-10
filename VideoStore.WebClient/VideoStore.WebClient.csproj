@@ -249,6 +249,7 @@
     <Content Include="Views\Cart\InsufficientStock.cshtml" />
     <Content Include="Views\Store\MediaDetail.cshtml" />
     <Content Include="Views\Store\WriteReview.cshtml" />
+    <Content Include="Views\Store\ListMediaWebAPI.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

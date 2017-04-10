@@ -41,6 +41,11 @@ namespace VideoStore.WebClient.Controllers
             return View(new WriteReviewViewModel(pUser.Model));
         }
 
+        public ActionResult ListMediaWebAPI()
+        {
+            return View();
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult WriteReview(WriteReviewViewModel pReviewViewModel, UserCache pUser, int media)

@@ -1,0 +1,56 @@
+﻿@model VideoStore.WebClient.ViewModels.CatalogueViewModel
+
+@{
+    ViewBag.Title = "ListMediaWebAPI";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>List Media Web API</h2>
+
+@*<table>
+    <tr>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.Items)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(item.Title, "MediaDetail", new{media = item.Id}) |
+                Price: $@item.Price |
+                Quantity: @item.StockCount
+
+                @using(Html.BeginForm("AddToCart", "Cart")) { 
+                    @Html.Hidden("pMediaId", item.Id) 
+                    @Html.Hidden("pReturnUrl", ViewContext.HttpContext.Request.Url.PathAndQuery)
+                    <input type="submit" value="+ Add to Cart" />
+                } 
+            </td>
+        </tr>
+    }
+
+</table>*@
+
+<p id="media" />
+
+@section scripts {
+    <script>
+        var uri = '/api/media';
+
+        $(document).ready(function() {
+            // Send an AJAX request
+            $.getJSON(uri)
+                .done(function(data) {
+                    // On success, 'data' contains a list of products.
+                    $.each(data,
+                        function(key, item) {
+                            // Add a list item for the product.
+                            $('<li>', { text: formatItem(item) }).appendTo($('#media'));
+                        });
+                });
+        });
+
+        function formatItem(item) {
+            return item.Title + ': $' + item.Price;
+        }
+    </script>
+}
